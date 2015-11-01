@@ -1,0 +1,117 @@
+
+                      Welcome to the MATLAB NORMAL Install
+
+Be prepared to provide MATLAB system configuration information for the tasks:
+    ---------------------------------------------------------------------
+    |   ALWAYS DONE -                                                   |
+    |  A1. Create scripts in $MATLAB/bin directory                      |
+    |  A2. Generate MATLAB path in $MATLAB/toolbox/local/pathdef.m      |
+    |  A3. Install M-files in $MATLAB/toolbox/local directory           |
+    |                                                                   |
+    |   OPTIONAL (asked first) -                                        |
+    | *B1. Create symbolic links to scripts in $MATLAB/bin directory    |
+    |  B2. Install the FLEXnet Network License Manager                  |
+    |                                                                   |
+    |   ALWAYS DONE (if license manager is installed) -                 |
+    |  C1. Create scripts in $MATLAB/etc directory                      |
+    |  C3. Create template license.dat file in $MATLAB/etc directory    |
+    |                                                                   |
+    |   SKIPPED (you are not superuser) -                               |
+    | +C2. Build symbolic links /etc/lmboot_TMW, /etc/lmdown_TMW        |
+    ---------------------------------------------------------------------
+'*' superuser access maybe required. '+' superuser access is required.
+ 
+
+
+                      Verify MATLAB root directory path
+                      ---------------------------------
+    -------------------------------------------------------------------------
+    | The MATLAB root directory path has been determined to be:             |
+
+        $MATLAB = /home/cristina/matlab
+
+    | Check the MATLAB root directory path carefully! If it is part of:     |
+    |     1. An AUTOMOUNTED filesystem - the path must force a mount        |
+    |     2. An AFS filesystem         - the path must be read-write        |
+    | Press <return> if OK. Otherwise, provide the correct pathname below.  |
+    -------------------------------------------------------------------------
+
+MATLAB root directory? ([/home/cristina/matlab])
+
+--------------------->   /home/cristina/matlab
+
+
+
+                                Update MATLAB
+                                -------------
+
+Working . . .
+
+Check for obsolete files and delete them (please wait) . . .
+
+
+
+              A1. Create scripts in $MATLAB/bin directory
+              -------------------------------------------
+
+
+Creating $MATLAB/bin scripts . . .
+
+    Script         Changed?       Old Copy in bin/old
+    ------         -------        ------------------- 
+    .matlab7rc.sh  (Initial copy)
+ 
+          A2. Generate MATLAB path in /home/cristina/matlab/toolbox/local/pathdef.m
+          ---------------------------------------------------------------
+Creating MATLAB path . . .
+
+
+
+          A3. Install M-files in $MATLAB/toolbox/local directory
+          -----------------------------------------------------
+
+Creating $MATLAB/toolbox/local M-files . . .
+
+    M-file         Changed?       Old Copy in toolbox/local/old
+    ------         -------        -----------------------------
+    matlabrc.m     (Initial copy)
+ 
+
+
+       B1. Create symbolic links to scripts in $MATLAB/bin directory
+       -------------------------------------------------------------
+ 
+    ------------------------------------------------------------------------
+    | To make 'matlab' and 'mex' valid commands on your system you have    |
+    | a choice of:                                                         |
+    |                                                                      |
+    | [a] Creating symbolic links to the $MATLAB/bin scripts in a          |
+    |     directory of your choice that is already on your UNIX search     |
+    |     path, or                                                         |
+    |                                                                      |
+    | [b] Adding the $MATLAB/bin directory to your UNIX search path.       |
+    ------------------------------------------------------------------------
+ 
+Do you want to create symbolic links to $MATLAB/bin scripts? ([y]/n) no
+
+             B2. Install the FLEXnet Network License Manager
+             ----------------------------------------------
+
+    License manager executables are missing . . .
+    License manager installation skipped . . .
+
+    To install the license manager executables try
+    reinstalling the License Manager.
+    If you downloaded the products you may need to 
+    download the matlab.glnxa64 file.
+
+
+
+    ---------------------------------------------------------------------
+    | Finished! This completes the:                                     |
+    |                                                                   |
+    |                  NORMAL install                                   |
+    |                                                                   |
+    |           for this host.                                          |
+    ---------------------------------------------------------------------
+

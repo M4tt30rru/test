@@ -1,0 +1,91 @@
+\section{Methodology}
+\label{Methodology}
+In this work we aim at analysing the structure of a software system using its associated network.
+First, to build a software system network we parse its source code, retrieved 
+from the corresponding Software Control Managers (SCM). 
+During this procedure, we associate network nodes to classes and network edges to the several relationships 
+between classes (inheritance, composition, etc.). 
+We consider as a main indicator of a software quality, the number of defects (bugs) that it presents, so  
+we collected data about the bugs of a software system by mining its Bug Tracking Systems (BTS). 
+In order to associate to each bug its corresponding classes we mined the commits on the software SCM to figure out
+which classes a bug fix intervention is related. % is correctly associated to a bug. 
+At the end we obtained a network where each node is labelled % annotated 
+with the number of bugs for the associated class. 
+% Specifically we are interested in extracting the community structure of a software system in order
+% to figure out its modular organization. Moreover, we are interested in computing the modularity Q associated
+% to a community structure \ref{}, the number of communities, and the clustering coefficient. 
+% In order to compute the metrics related to the community structure, we
+% need to build the networks to associate to the software systems. This is done
+% by parsing the source code retrieved from Software Configuration Management
+% (SCM) repositories, in order to extract the various relationships among classes
+% and files. 
+% These relationships could be inheritance, composition, dependencies,
+% aggregation, association and so on. We considered Java classes as nodes of
+% the software network, while we considered the relationships among classes as
+% network edges. 
+% Once we retrieved the networks, we collected software issues
+% by mining bug repositories, in order to associate to each node in the network
+% the corresponding defects. Finally we analyzed the community structure of the
+% software networks, computing different community metrics and some software
+% metrics.
+We collected the source code and analysed 5 releases of Eclipse, whose main feature are 
+presented in Table \ref{tab:Eclipse}. 
+% We collected the source code of NetBeans and Eclipse from the CVS repository.
+% We analyzed 6 releases of NetBeans and 5 releases of Eclipse. In Table \ref{tab:Eclipse} 
+% we report their main features.
+
+
+\begin{table}[h]
+\begin{center}
+% \scalebox{0.9}
+% {
+% \begin{tabular}{|l|c|c|c|c|c|c|}
+% \hline
+% Release & NB 3.2 & NB 3.2.1 & NB 3.3.0 & NB 3.4 & NB 4.0 & NB 6.0.1\\ \hline
+% Size & 4333 & 4348 & 5678 & 7520 & 11866 & 34591 \\
+% 
+% Sub-Projects n.& 38 & 38 & 39 & 42 & 41 & 56 \\ 
+% 
+% N. of defects & 14948 & 15043 & 19218 & 21529 & 26592 & 73230 \\ \hline
+% 
+% \end{tabular}
+% }
+
+
+\scalebox{0.9}
+{
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline 
+Release & Eclipse 2.1 & Eclipse 3.0 & Eclipse 3.1 & Eclipse 3.2 & Eclipse 3.3 \\\hline
+Size & 8257 & 11406 & 13413 & 16013 & 17517 \\
+ 
+Sub-Projects n.& 49 & 66 & 70 & 86 & 104 \\ 
+
+N. of defects & 47788 & 59804 & 69900 & 80149 & 95337  \\ \hline
+
+
+\end{tabular}
+}
+\end{center}
+\caption{Main features of the analysed releases of Eclipse (EC): size (number of classes), 
+number of sub-projects (sub-networks), and total number of defects.}
+\label{tab:Eclipse}
+
+\end{table}
+
+Each release is structured in almost independent sub-projects, thus the total number 
+of sub-projects analysed amounts at 375, with more than 60000 nodes (classes) 
+and more than 350000 defects.% 170623
+
+We performed the computation of the community structure using the algorithm devised by Clauset et al. \cite{Clauset:2004}. 
+This is an agglomerative clustering algorithm that perform a greedy optimization of the Modularity (Q) \cite{Newman:2004}. 
+At the end we retrieved the number of communities in which the network is structured, the corresponding value for Q 
+and the nodes associated to each community.
+We performed the computation of the clustering coefficient using the implementation included in the IGraph package 
+\cite{igraph} for R software\cite{R}. 
+To study the evolution of the system we use the following approach. We carried out the 
+analysis firstly for each release, and than putting together different releases, according to a temporal evolution. 
+Specifically, of the 5 releases of our dataset, we
+studied the evolution of the system by cumulating the first and the second releases, then adding the third release 
+to the first set, and so on. 
+This way we were able to make predictions about the next release starting from those previously cumulated.

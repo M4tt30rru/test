@@ -1,0 +1,100 @@
+\section{Methodology}
+\label{Methodology}
+
+In this work we aim at analysing the structure of a software system using its associated software network.
+In order to build the associated software network we parsed software's source code, retrieved from the corresponding Software Control Managers (SCM). 
+During this procedure, we associate network nodes to classes and network edges 
+to the various relationships between classes (inheritance, composition, etc.). 
+We consider the number of defects (bugs) as a main indicator of software quality. 
+To exploit this we collected data about the bugs of a software system by 
+mining its Bug Tracking Systems (BTS). 
+Bugzilla is the BTS adopted by Eclipse, where defects are tagged with a unique ID number.
+Usually an entry in BTS is called with the common term 'Issue', and there is usually 
+no information about classes associated to defects.
+Usually all the maintenance operations on software systems are reported on Software Configuration Management
+(SCM) systems like Concurrent Version Systems\footnote{CVS, http://www.nongnu.org/cvs/.},
+Git and Subversion. 
+However, it is not possible to distinguish between bug fixings or
+other actions such as enhancements, since all maintenance operations on software systems are recorded as "commit 
+operations".
+To obtain a correct mapping between Issue(s) and the related 
+Java files (CUs), 
+we analyzed the SCM log messages, to identify commits associated to
+maintenance operations where Issues are fixed. 
+If a maintenance operation is done on a file to address a defect, 
+we consider the CU as affected by that defect. \\
+We first analyzed the text of commit messages, looking for Issue-IDs.
+Unfortunately, every positive integer number is a potential Issue-ID. However, sometimes
+numbers that refer to maintenance operations are not related to Issue-ID resolution, but, for example,
+to branching, data, number of release, copyright updating, and so on. 
+To avoid wrong mappings between Issue-IDs and CUs, we applied the following rules:
+\begin{itemize}
+\item In each release, a CU can be affected only by Issues which are referred to in the BTS as belonging to the same release.
+\item All IDs not filtered out are considered Issues and associated to the addition or modification of one or more CUs, as reported in the commit logs. 
+\item When assigning  defects to classes in the corresponding CUs, since there were 
+few CUs containing more than one class, we decided to assign all the defects to the biggest 
+class of those CUs.
+\end{itemize}
+
+This method might not completely address the problems 
+of the mapping between defects and CUs \cite{Ayari:2007}. 
+In any case we checked manually 10$\%$ of randomly chosen CU-defect(s) associations for intermediate releases
+and every CU-defect association for 
+3 sub-projects without finding any error. A bias may still remain 
+due to lack of information on SCM \cite{Ayari:2007}. 
+The subset of Issues satisfying the conditions as in Eaddy et al. is the Bug-metric \cite{Eaddy:2008}. 
+Of course there are chances for wrong assignments to happen for 
+some classes, but since the average number of defects for class is very low,
+the number of wrong assignments in the entire system, considering also 
+CUs with one class, is very limited. 
+\\
+At the end of this process we obtained a network where 
+to each node is associated the number of bugs of the corresponding class. 
+
+We collected the source code and analysed 5 releases of Eclipse, whose main feature are 
+presented in Table \ref{tab:Eclipse}. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline 
+\textbf{Release} &\textbf{  2.1} & \textbf{ 3.0} &  \textbf{3.1 }&  \textbf{3.2} &  \textbf{3.3
+} \\
+Size & 8257 & 11406 & 13413 & 16013 & 17517 \\
+ 
+Sub-Projects n.& 49 & 66 & 70 & 86 & 104 \\ 
+
+N. of defects & 47788 & 59804 & 69900 & 80149 & 95337  \\ \hline
+
+
+\end{tabular}
+\end{center}
+\caption{Main features of the analysed releases of Eclipse (EC): size (number of classes), 
+number of sub-projects (sub-networks), and total number of defects.}
+\label{tab:Eclipse}
+
+\end{table}
+
+Each release is structured in almost independent sub-projects. The total number 
+of sub-projects analysed amounts at 375, with more than 60000 nodes (classes) 
+and more than 350000 defects.% 170623
+
+We detected the associated community structure using the algorithm devised by 
+Clauset et al. \cite{Clauset:2004}. 
+This is an agglomerative clustering algorithm that performs a greedy optimization 
+of the Modularity (Q) \cite{Newman:2003}. 
+At the end we retrieved the number of communities in which the network is structured, 
+the corresponding value Q of the modularity, and the nodes associated to each community. 
+We performed the computation of the clustering coefficient using the implementation 
+included in the IGraph software 
+\cite{igraph}. 
+To study the system's evolution we used the following approach. We first 
+carried out the analysis for each release, and then we assembled together 
+different releases, according to a temporal evolution. 
+More precisely, for the 5 releases of our dataset, we
+studied the evolution of the system by cumulating the first and 
+the second releases in a single set, then adding the third release 
+to this first set to obtain a second set and so on. 
+This way we were able to make predictions about the next release 
+starting from those cumulated in the previous assembly.
+

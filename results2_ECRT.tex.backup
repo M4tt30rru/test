@@ -1,0 +1,171 @@
+\section{Results}
+\label{Results}
+
+% \subsection{Defect Density Prediction}
+Figures \ref{fig:abn.vs.n.comm} and \ref{fig:cc.vs.n.comm} show the distributions of the average bugs number 
+(ABN, Fig. \ref{fig:abn.vs.n.comm}) 
+and of clustering coefficient (CC, Fig. \ref{fig:cc.vs.n.comm}) with respect to the number of communities (NOC) 
+for all the sub-projects of all the releases. 
+Although the scatterplots for the relationship between NOC % number of communities 
+and other metrics are sparse, the reported scatterplots show the existence
+of a power-law-like relationship between the maximum values of the mentioned metrics. 
+This led us to hypothesize a linear relationship between the maximum values of 
+CC and the ABN. % average bug number. If this is the case the CC can be used to predict the maximum ABN % average number of defects 
+% in a future release, 
+% having cumulated the data belonging to the previous releases.
+In Tab. \ref{tab:log-log-cc}, on the left, the power law exponents, 
+the correlation coefficient, the $\chi^2$ and the degrees of freedom (\textit{dof}) for the best fitting in log-log scale are reported. 
+They refer to different ``cumulated''
+releases for the relationship between CC and NOC. % clustering coefficient and the number of communities. 
+Table \ref{tab:log-log-cc} shows how the power laws parameters do not change significantly from one cumulated release to another. 
+This suggests the existence of a progressively more stable behaviour during 
+software evolution, where the fitting with a power law becomes 
+more accurate and tends to a fixed value as new releases are added 
+in the cumulated dataset.
+The same considerations can be applied to the relationship between maximum ABN 
+and NOC. % average bugs number and number of communities.
+% stabilize around a fixed value
+% Namely, with the addition of more releases, .
+The scatterplot portraied in Fig. 2 % \ref{cumulated_bug_cc_EC} 
+shows the relationship between the maximum defect density versus the maximum clustering coefficient, 
+for all the cumulated releases, along with the best fitting straight line.
+We investigated if, starting with a dataset of $N$ releases, the best fitting curve for the cumulated $N -1$ releases 
+could also be a good fit for the $Nth$ release.
+In order to measure the forecast accuracy we adopted a $\chi^2$ test.
+Table \ref{tab:max_abn-vs-maxcc} reports the results of the best fitting for the relationship between CC and ABN showing that the linear correlation is not very high. Nonetheless, the $\chi^2$ test returns an high level of significance.
+Table 2 % \ref{prevision_test} 
+reports the results of the analysis on the forecast for software quality. 
+We computed the ratio between the $\chi^2$ and the degrees of freedom. 
+% The reported $\chi^2$ values are close to 1, meaning that for the given degrees of freedom the fits are good.
+According to the results reported on Table \ref{tab:log-log-cc}, on the right, the 
+$\chi^2$ values are close to 1, meaning that for the given degrees of 
+freedom the fits are good.
+
+\begin{figure}
+        \centering
+        \begin{subfigure}%[b]
+        {0.3\textwidth}
+                \includegraphics[width=\textwidth]{figure/EC_BUG_power_law-eps-converted-to.pdf}
+                \caption{Average Bug Number vs. Number of Communities}
+                \label{fig:abn-noc}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}%[b]
+        {0.3\textwidth}
+                \includegraphics[width=\textwidth]{figure/EC_CC_power_law-eps-converted-to.pdf}
+                \caption{Clustering Coefficient vs. Number of Communities}
+                \label{fig:cc-noc}
+        \end{subfigure}
+
+        \caption{Scatterplot of the relationships between the studied metrics.}
+        \label{fig:scatterplot-abn-cc-noc}
+\end{figure}
+
+\begin{table}%[htbp]
+\centering
+\begin{tabular}{c|c|c|c|c|c|}
+\hline
+\textbf{Releases} & $\alpha$ & $r$ & $\chi^2$ & $dof$  \\\hline
+      2.1 - 3-0   & -1.010  & -0.654 &  0.075 & 16 	 \\
+      2.1 - 3.1   & - 0.917 & -0.667 &  0.057 & 17 	 \\ 
+      2.1 - 3.2   & -0.977  & -0.715 &  0.087 & 20	 \\ 
+      2.1 - 3.3   & -0.986  & -0.712 &  0.119 & 21	 \\
+\hline
+\end{tabular}
+\caption{Results on the power law between maximum Clustering Coefficient vs Number of communities for Eclipse: exponent $\alpha$, 
+correlation coefficient ($r$), value of Chi Squared ($\chi^2$ ) and number of degrees of freedom ($dof$). 
+}
+\label{tab:log-log-cc-noc}
+\end{table}
+\begin{table}
+          \begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	\textbf{Eclipse} & max ADD vs NOC & max CC vs NOC \\ 	\hline
+		     dof & 13 & 13 \\
+		    $\chi^2$ / dof & 0.361 & 1.005 \\ \hline
+	      \end{tabular}
+\caption{Fit data for the power laws between the maximum average defect density (max ADD) versus the number of communities
+and maximum clustering coefficient (max CC) versus the number of communities: correlation coefficient ($r$), 
+      normalized Chi squared ($\chi^2$ ), and number of degrees of freedom ($dof$).}
+\label{tab:lin-fit-cc-and-add}
+\end{table}
+% \newpage
+% \subsection{Linear Correlations}
+% \textbf{We also consider the relationship between maximum values of the defect density and the clustering coefficient. 
+% From what emerged from the previous analysis both the distributions of the relationship between these two metrics and the number of communities follow a power law, so 
+% we investigated the existence of a linear correlation among them.}
+% Since the maximum values of the defect density and the maximum values of the clustering coefficient depend on the same variable (the number of communities) through a power law, we 
+% decided to check the existence of a direct correlation among these two metrics.
+% The scatterplot shown on Fig. \ref{cumulated_bug_cc_EC} shows the relationship between the maximum defect density versus the maximum clustering coefficient, 
+% which has been fitted with a straight line. Tabs. \ref{tab:max_abn-vs-maxcc-EC} reports the values of Correlation coefficient, $\chi^2$, and degrees of freedom (dof)
+% for Eclipse and NetBeans respectively.
+% 
+% To verify this hypothesis we used as training set all the releases except the last one. 
+% 
+% In order to measure the prediction accuracy, we performed a  $\chi^2$ test
+% to understand whether the points of the last release (the data sample) could be fitted by the best fitting curve of the points from 
+% all the previous releases. 
+% The quality of this prediction is thus given by the normalized $\chi^2$, which provides the goodness of the fit.
+% The fits have been performed for the maximum defect density versus number of communities, and for the maximum clustering coefficient versus number of
+% communities.
+% 
+% \textbf{As can been seen by looking at Tab. \ref{tab:log-log-cc-NB}}, the parameters of the power laws do not change significantly from one release to another, 
+% indicating a stable behaviour during software evolution in the analysed projects. 
+% Namely, with the addition of more releases, the fitting with a power law becomes more accurate, and tends to 
+% stabilize around a fixed value.
+% % This observation can be used to predict the maximum number of defects in every set of sub-projects having the same 
+% % number of communities in the next release, from the measurements of previous releases. 
+% % To verify this hypothesis we used as training set all the releases except the last one.
+% \textbf{The value reported on Table \ref{prevision_test} shows that $\chi^2$ values are close to 1, meaning that for the given degrees of freedom the fits are good.}
+% on Fig. \ref{cumulated_bug_cc_EC} we see ... Even if the linear correlation coefficient is not very high, the $\chi^2$ provides a high significance level, suggesting that each variable is a good predictor 
+% of the other one. This indicates that if the maximum values of the clustering coefficient are known for the various number of communities,
+% one can in principle estimate the maximum density of defects for that number of communities. 
+  \begin{minipage}{\textwidth}
+  \begin{minipage}{0.65\textwidth}
+%     \centering
+    \includegraphics[width=0.9 \textwidth]{figure/nuovefig/cumulated_bug_cc_EC.eps}
+    \label{cumulated_bug_cc_EC}
+    \captionof{figure}{Cumulated plots and fitting lines for the maximum defect density vs maximum clustering coefficient.}
+  \end{minipage}
+%   \hfill
+  \begin{minipage}{0.30\textwidth}
+  \vspace{5pt}
+    \centering
+    \resizebox{\columnwidth}{!}{
+      \begin{tabular}{|l|c|c|c|}
+      \hline
+      \textbf{Releases} & $r$ & $\chi^2$ & $dof$  \\\hline
+      2.1 - 3-0 & 0.565 & 0.633 & 16  \\\hline 
+      2.1 - 3.1 & 0.576 & 0.651  & 17  \\\hline 
+      2.1 - 3.2 & 0.677 & 0.523 & 20 \\ \hline 
+      2.1 - 3.3 & 0.687 & 0.547 & 21 \\\hline
+      \end{tabular}
+      }
+      \vspace{5pt}
+      \captionof{table}{Fit data for the maximum defect density vs maximum clustering coefficient: correlation coefficient ($r$), 
+      normalized Chi squared ($\chi^2$ ), and number of degrees of freedom ($dof$).}
+\label{tab:max_abn-vs-maxcc}       % Give a unique label
+    \end{minipage}
+  \end{minipage}
+  
+%   \begin{figure}
+%         \centering
+%         \begin{subfigure}% [b]
+%         {0.7\textwidth}
+%                 \includegraphics[width=\textwidth]{figure/nuovefig/cumulated_bug_cc_EC.eps}
+%                 \caption{Cumulated plots and fitting lines for the maximum defect density vs maximum clustering coefficient.}
+%                 \label{fig:gull}
+%         \end{subfigure}%
+%         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+%           %(or a blank line to force the subfigure onto a new line)
+%         \begin{subfigure}% [b]
+%         {0.3\textwidth}
+%                 \includegraphics[width=\textwidth]{figure/tab4-no-cap.pdf}
+%                 \caption{NetBeans: fit data for the maximum defect density vs maximum clustering coefficient: correlation coefficient ($r$), 
+%       normalized Chi squared ($\chi^2$ ), and number of degrees of freedom ($dof$).}
+%                 \label{fig:tiger}
+%         \end{subfigure}
+%         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+%           %(or a blank line to force the subfigure onto a new line)
+% \end{figure}

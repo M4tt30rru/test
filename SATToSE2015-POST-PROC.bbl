@@ -1,0 +1,91 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{AMADP07}
+
+\bibitem[AMADP07]{Ayari:2007}
+K.~Ayari, P.~Meshkinfam, G.~Antoniol, and M.~Di~Penta.
+\newblock Threats on building models from cvs and bugzilla repositories: the
+  mozilla case study.
+\newblock In {\em Proceedings of the 2007 conference of the center for advanced
+  studies on Collaborative research}, CASCON '07, pages 215--228, New York, NY,
+  USA, 2007. ACM.
+
+\bibitem[BC99]{Baldwin:1999}
+Carliss~Y. Baldwin and Kim~B. Clark.
+\newblock {\em Design Rules: The Power of Modularity Volume 1}.
+\newblock MIT Press, Cambridge, MA, USA, 1999.
+
+\bibitem[CK94]{Chidamber:1994}
+S.~Chidamber and C.~Kemerer.
+\newblock A metrics suite for object-oriented design.
+\newblock {\em IEEE Trans. Software Eng.}, 20(6):476--493, June 1994.
+
+\bibitem[CNM04]{Clauset:2004}
+Aaron Clauset, M.~E.~J. Newman, , and Cristopher Moore.
+\newblock Finding community structure in very large networks.
+\newblock {\em Physical Review E}, pages 1-- 6, 2004.
+
+\bibitem[EZS{\etalchar{+}}08]{Eaddy:2008}
+M.~Eaddy, T.~Zimmermann, K.D. Sherwood, V.~Garg, G.C. Murphy, and et~al.
+\newblock Do crosscutting concerns cause defects?
+\newblock {\em IEEE Transactions on Software Engineering}, 34(4):497--515,
+  November 2008.
+
+\bibitem[GC06]{igraph}
+T.~Nepusz G.~Csardi.
+\newblock The igraph software package for complex network research.
+\newblock {\em InterJournal of Complex Systems}, page 1695, 2006.
+
+\bibitem[GN01]{Girvan:2002}
+M~Girvan and M~E~J Newman.
+\newblock Community structure in social and biological networks.
+\newblock {\em Proc. Natl. Acad. Sci. U. S. A.},
+  99(cond-mat/0112110):8271--8276. 8 p, Dec 2001.
+
+\bibitem[Mye03]{Myers:2003}
+Christopher~R. Myers.
+\newblock Software systems as complex networks: Structure, function, and
+  evolvability of software collaboration graphs.
+\newblock {\em Phys. Rev. E}, 68(4):046116, Oct 2003.
+
+\bibitem[New03]{Newman:2003}
+M.E.J. Newman.
+\newblock The structure and function of complex networks.
+\newblock {\em SIAM review}, 45(2):167--256, 2003.
+
+\bibitem[NG04]{NG:2004}
+M.~E.~J. Newman and M.~Girvan.
+\newblock Finding and evaluating community structure in networks.
+\newblock {\em Physical Review}, E 69(026113), 2004.
+
+\bibitem[Par72]{Parnas:1972}
+D.~L. Parnas.
+\newblock On the criteria to be used in decomposing systems into modules.
+\newblock {\em Commun. ACM}, 15(12):1053--1058, December 1972.
+
+\bibitem[{\v S}B]{Subelj:2011}
+L.~{{\v S}ubelj} and M.~{Bajec}.
+
+\bibitem[SM96]{Sanchez:1996}
+Ron Sanchez and Joseph~T. Mahoney.
+\newblock Modularity, flexibility, and knowledge management in product and
+  organization design.
+\newblock {\em Strategic Management Journal}, 17:pp. 63--76, 1996.
+
+\bibitem[{\v{S}}{\v{Z}}BB0]{Subelj:2014}
+L.~{{\v{S}}ubelj}, S.~{{\v{Z}}itnik}, N.~{Blagus}, and M.~{Bajec}.
+\newblock Node mixing and group structure of complex software networks.
+\newblock {\em Advances in Complex Systems}, 0(0):1450022, 0.
+
+\bibitem[WKD07]{Wen:2008}
+Lian Wen, Diana Kirk, and R.~Geoff Dromey.
+\newblock Software systems as complex networks.
+\newblock In Du~Zhang, Yingxu Wang, and Witold Kinsner, editors, {\em IEEE
+  ICCI}, pages 106--115. IEEE, 2007.
+
+\bibitem[ZN08]{Zimmermann:2008}
+Thomas Zimmermann and Nachiappan Nagappan.
+\newblock Predicting defects using network analysis on dependency graphs.
+\newblock In {\em Proceedings of the 30th International Conference on Software
+  Engineering}, ICSE '08, pages 531--540, New York, NY, USA, 2008. ACM.
+
+\end{thebibliography}

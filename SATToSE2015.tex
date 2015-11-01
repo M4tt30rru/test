@@ -1,0 +1,88 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+% \usepackage{twocolpceurws}
+\usepackage{onecolpceurws}
+\usepackage{float}
+% \usepackage{floatrow}
+\usepackage{caption}
+% \usepackage{adjustbox}
+\usepackage{subcaption}
+\usepackage{subfig}
+
+% \DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+\title{Predicting Software Quality through Network Analysis}
+
+\author{
+Giulio Concas \\ 
+% Department of Electrical and Electronic Engineering 
+% DIEE \footnote{\label{diee}Department of Electrical and Electronic Engineering} \\ University of Cagliari \\
+% Piazza D'Armi, 09123 \\ Cagliari (Italy) \\ 
+concas@diee.unica.it
+\and
+Michele Marchesi \\ 
+% Department of Electrical and Electronic Engineering 
+% DIEE \footnote{\label{diee}Department of Electrical and Electronic Engineering} \\ University of Cagliari \\
+% Piazza D'Armi, 09123 \\ Cagliari (Italy) \\ 
+michele@diee.unica.it
+\and
+Cristina Monni \\ 
+% DIEE  \\ University of Cagliari \\
+% Piazza D'Armi, 09123 \\ Cagliari (Italy) \\ 
+% Department of Electrical and Electronic Engineering \\ University of Cagliari \\
+% Piazza D'Armi, 09123 Cagliari (Italy) \\ 
+cristina.monni@diee.unica.it
+\and
+Matteo Orr\'{u} \\ 
+% DIEE \\ University of Cagliari \\
+% Piazza D'Armi, 09123 \\ Cagliari (Italy) \\ 
+% Department of Electrical and Electronic Engineering \\ University of Cagliari \\
+% Piazza D'Armi, 09123 Cagliari (Italy) \\ 
+matteo.orru@diee.unica.it
+\and
+Roberto Tonelli \\ 
+% DIEE \\ University of Cagliari \\
+% Piazza D'Armi, 09123 \\ Cagliari (Italy) \\ 
+% Department of Electrical and Electronic Engineering \\ University of Cagliari \\
+% Piazza D'Armi, 09123 Cagliari (Italy) \\ 
+roberto.tonelli@dsf.unica.it
+}
+
+\institution{Department of Electrical and Electronic Engineering (DIEE)\\ 
+	     University of Cagliari \\
+             Piazza D'Armi, 09123 Cagliari (Italy)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We used a complex network approach to study the evolution of a large software system, 
+Eclipse, with the aim of statistically characterize software defectiveness along the time.
+We studied the software networks associated to several releases of the system, 
+focusing our attention specifically on their community structure, modularity and clustering coefficient. 
+We found that the maximum average defect density is related to two different metrics: 
+the number of detected communities inside a software network
+and the clustering coefficient. 
+These two relationships both follow a power-law distribution which leads to a linear correlation 
+between clustering coefficient and number of communities.
+These results can be useful to make predictions about the evolution of software systems, 
+especially with respect to their defectiveness.
+\end{abstract}
+\vskip 32pt
+
+\input{introduction_ECRT}
+
+\input{methodology_ECRT}
+
+\input{results2_ECRT}
+
+\input{conclusions_ECRT}
+
+\bibliographystyle{alpha} 
+
+\bibliography{sigproc, reftest, ese_bibliography, sattose}
+
+
+\end{document}
+
+

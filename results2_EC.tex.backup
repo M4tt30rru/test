@@ -1,0 +1,214 @@
+\section{Results}
+\label{Results}
+
+% \subsection{Defect Density Prediction}
+The Figg. \ref{fig:abn.vs.n.comm} and \ref{fig:cc.vs.n.comm} show the distributions of the average bugs number 
+(ABN, Fig. \ref{fig:abn.vs.n.comm}) 
+and clustering coefficient (CC, Fig. \ref{fig:cc.vs.n.comm}) with respect to the number of communities (NOC) 
+for all the sub-projects of all the releases. 
+Whereas the scatterplots for the relationship between NOC 
+and other metrics are sparse, the reported scatterplots show that 
+there is a power-law-like relationship between the maximum values of the mentioned metrics. 
+This led us to hypothesize that there is a linear relationship between the maximum values of CC and the ABN. 
+If this was the case, then the CC could be used to predict the maximum ABN s 
+in a future release, given the cumulated data from the past.
+In Tab. \ref{tab:log-log-cc-NB} 
+the power law exponents, the correlation coefficient $r$, the $\chi^2$
+and the degrees of freedom (\textit{dof})for the best fitting in log-log scale are reported. 
+The latter refer to  the relationship between CC and NOC for different ``cumulated''
+releases.
+As can been seen by looking at Tab. \ref{tab:log-log-cc-NB}, power laws parameters do not change significantly 
+from one cumulated release to another. This seems to suggest that there is a stable behaviour during 
+software evolution, when the fitting with a power law becomes more accurate and tends to a fixed value 
+as new releases are added in the cumulated dataset.
+Same behaviour applies for the relationship between maximum ABN and NOC, as shown in Tab.~\ref{tab:log-log-max-abn-vs-noc}. 
+
+The scatterplot shown on Fig. \ref{cumulated_bug_cc_NB} shows the relationship between the maximum defect 
+density versus the maximum clustering coefficient, 
+for all the cumulated releases, along with the fitting straight line.
+The plot shows a stable behaviour during the evolution the Eclipse project, so it can be used to make predictions about 
+the quality of future releases in relation with their topology.
+Starting with a dataset of $N$ releases, we investigated if the best fitting curve for the cumulated $N -1$ releases 
+could be also a good fit for the $Nth$ releases.
+
+As a measure of prevision accuracy, we adopted a $\chi^2$ test.
+In Table 4 we can see the results of the fitting for the relationship between CC and ABN where we can see that 
+linear correlation is not high. Nonetheless, $\chi^2$ returns an high significance level.
+Table 2 % \ref{prevision_test} 
+reports the results of the analysis on the prediction quality. 
+We computed the ratio between $\chi^2$ and the degree of freedom. 
+% The reported $\chi^2$ values are close to 1, meaning that for the given degrees of freedom the fits are good.
+As it can be seen from the values reported on Table \ref{prevision_test}, $\chi^2$ values are close to 1, 
+meaning that for the given degrees of freedom the fits are good.
+
+% To verify this hypothesis we used as training set all the releases except the last one. 
+% In order to measure the prediction accuracy, we performed a  $\chi^2$ test
+% to understand whether the points of the last release (the data sample) could be fitted by the best fitting curve of the points from 
+% all the previous releases. 
+% The quality of this prediction is thus given by the normalized $\chi^2$, which provides the goodness of the fit.
+% The fits have been performed for the maximum defect density versus number of communities, and for the maximum clustering coefficient versus number of
+% communities.
+% This observation can be used to predict the maximum number of defects in every set of sub-projects having the same 
+% number of communities in the next release, from the measurements of previous releases. 
+% To verify this hypothesis we used as training set all the releases except the last one.
+% This observation can be used to predict the maximum number of defects in
+% every set of sub-projects having the same number of communities in the next release, from the measurements of
+% previous releases.
+% The analysis by means of community detection reveals the existence of correlations among the maximum defect density and the number of communities,
+% and among the maximum clustering coefficient and the number of communities.
+% While the scatter plots of the number of detected communities with the other metrics are sparse, and the various correlations are low, a joint exam
+% of the scatter plots suggests a relationship between the maximum clustering coefficient and the number of communities, and between the maximum defect
+% density and the number of communities.
+
+  \begin{minipage}{\textwidth}
+  \begin{minipage}{0.3 \textwidth}
+    \centering
+%     \rule{6.4cm}{3.6cm}
+    \vspace{10pt} \includegraphics[width=\textwidth]{figure/EC_BUG_power_law-eps-converted-to.pdf}
+    \captionof{figure}{Average Bug Number vs. Number of Communities}
+    \label{fig:abn.vs.n.comm}
+  \end{minipage}
+  \hfill
+        \begin{minipage}{0.3 \textwidth}
+%           \begin{figure}[H]
+              \vspace{0pt} \includegraphics[width=\textwidth]{figure/EC_CC_power_law-eps-converted-to.pdf}
+              \captionof{figure}{Clustering Coefficient vs. Number of Communities}
+              \label{fig:cc.vs.n.comm}
+%           \end{figure}
+      \end{minipage}
+  \begin{minipage}{0.30\textwidth}
+ \vspace{20pt}
+    \centering
+   
+    \resizebox{\columnwidth}{!}{
+      \begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	\textbf{Eclipse} & max ADD & max CC \\ 	\hline
+		     dof & 13 & 13 \\
+		    $\chi^2$ / dof & 0.361 & 1.005 \\ \hline
+	% \end{tabular}
+	% \label{prevision_test_EC}       % Give a unique label
+      \end{tabular}
+	  %       \begin{tabular}{|c|c|c|c|c|c|}
+%        	 \hline
+% 	 \textbf{NetBeans} & max ADD & max CC \\
+% 	 \hline
+% 	  dof & 25 & 24 \\
+% 	  $\chi^2$ / dof & 0.947 & 0.038 \\ 
+% 	  \hline
+% 	  % \label{prevision_test_NB}   
+% 	  \end{tabular}
+	  }
+	  \label{prevision_test}
+      \captionof{table}{Values of the $\chi^2$ coefficient and of the reduced degrees of freedom (\textit{dof})
+for the fitting of the points from the last release with the line given by the previous releases.
+The values refers to the maximum average defect density(max ADD) and to the maximum clustering coefficient (max CC).}
+    \end{minipage}
+  \end{minipage}
+  \vspace{0.01\linewidth}
+% In  Tab. \ref{tab:log-log-cc-NB} we report the power law exponents, the correlation coefficient, the $\chi^2$
+% and the degrees of freedom for the best fitting in log-log scale, for different ``cumulated''
+% releases \textbf{for the relationship between clustering coefficient and the number of communities}. 
+% 
+% Table \ref{prevision_test} reports the \textbf{results of the analysis on the prediction quality}. 
+% The reported $\chi^2$ values are close to 1, meaning that for the given degrees of freedom the fits are good.
+\begin{table}[htbp]
+\begin{center}
+% For LaTeX tables use
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Eclipse} &2.1 - 3-0 & 2.1 - 3.1 & 2.1 - 3.2 & 2.1 - 3.3 \\
+\hline
+$r$ & 0.565  & 0.576 &  0.677 &  0.687\\ 
+
+$\chi^2$ & 0.633& 0.651  & 0.523 & 0.547  \\
+
+$dof$ & 16 & 17 & 20 & 21\\ 
+\hline
+\end{tabular}
+
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% \textbf{NetBeans} & 3.2 - 3.2.1 & 3.2 - 3.3.0 & 3.2 - 3.4 & 3.2 - 4.0 & 3.2 - 6.0.1 \\\hline
+% $\alpha$ & 0.497 & -0.521 & -0.541 & -0.546 & -0.568 \\ 
+% 
+% $r$ & -0.813 &-0.805 & -0.820 & -0.846 & -0.935 \\ 
+% 
+% $\chi^2$ & 0.121 & 0.047 & 0.033 & 0.031 & 0.246\\ 
+% 
+% $dof$ & 13 & 18 & 21 & 23 & 29\\ 
+% \hline
+% \end{tabular}
+% \caption{NetBeans: Log-log plots data of maximum Clustering Coefficient vs Number of communities: correlation coefficient, value of Chi Squared and number of 
+% degrees of freedom.}
+\label{tab:log-log-cc-NB}
+\caption{Data regarding maximum Clustering Coefficient vs Number of communities for Eclipse: exponent $\alpha$, 
+correlation coefficient ($r$), value of Chi Squared ($\chi^2$ ) and number of degrees of freedom ($dof$).}
+% \caption{Data regarding maximum Clustering Coefficient vs Number of communities for NetBeans: exponent $\alpha$, 
+% correlation coefficient ($r$), value of Chi Squared ($\chi^2$ ) and number of degrees of freedom ($dof$).}
+\end{center}
+     % Give a unique label
+\end{table}
+% \newpage
+% \subsection{Linear Correlations}
+% \textbf{We also consider the relationship between maximum values of the defect density and the clustering coefficient. 
+% From what emerged from the previous analysis both the distributions of the relationship between these two metrics and the number of communities follow a power law, so 
+% we investigated the existence of a linear correlation among them.}
+% Since the maximum values of the defect density and the maximum values of the clustering coefficient depend on the same variable (the number of communities) through a power law, we 
+% decided to check the existence of a direct correlation among these two metrics.
+% The scatterplot shown on Fig. \ref{cumulated_bug_cc_EC} shows the relationship between the maximum defect density versus the maximum clustering coefficient, 
+% which has been fitted with a straight line. Tabs. \ref{tab:max_abn-vs-maxcc-EC} reports the values of Correlation coefficient, $\chi^2$, and degrees of freedom (dof)
+% for Eclipse and NetBeans respectively.
+% 
+% To verify this hypothesis we used as training set all the releases except the last one. 
+% 
+% In order to measure the prediction accuracy, we performed a  $\chi^2$ test
+% to understand whether the points of the last release (the data sample) could be fitted by the best fitting curve of the points from 
+% all the previous releases. 
+% The quality of this prediction is thus given by the normalized $\chi^2$, which provides the goodness of the fit.
+% The fits have been performed for the maximum defect density versus number of communities, and for the maximum clustering coefficient versus number of
+% communities.
+% 
+% \textbf{As can been seen by looking at Tab. \ref{tab:log-log-cc-NB}}, the parameters of the power laws do not change significantly from one release to another, 
+% indicating a stable behaviour during software evolution in the analysed projects. 
+% Namely, with the addition of more releases, the fitting with a power law becomes more accurate, and tends to 
+% stabilize around a fixed value.
+% % This observation can be used to predict the maximum number of defects in every set of sub-projects having the same 
+% % number of communities in the next release, from the measurements of previous releases. 
+% % To verify this hypothesis we used as training set all the releases except the last one.
+% \textbf{The value reported on Table \ref{prevision_test} shows that $\chi^2$ values are close to 1, meaning that for the given degrees of freedom the fits are good.}
+% on Fig. \ref{cumulated_bug_cc_EC} we see ... Even if the linear correlation coefficient is not very high, the $\chi^2$ provides a high significance level, suggesting that each variable is a good predictor 
+% of the other one. This indicates that if the maximum values of the clustering coefficient are known for the various number of communities,
+% one can in principle estimate the maximum density of defects for that number of communities. 
+  \begin{minipage}{\textwidth}
+  \begin{minipage}{0.65\textwidth}
+%     \centering
+    \includegraphics[width=0.9 \textwidth]{figure/nuovefig/cumulated_bug_cc_EC.eps}
+    \label{cumulated_bug_cc_NB}
+    \captionof{figure}{Cumulated plots and fitting lines for the maximum defect density vs maximum clustering coefficient.}
+  \end{minipage}
+%   \hfill
+  \begin{minipage}{0.30\textwidth}
+  \vspace{5pt}
+    \centering
+    \resizebox{\columnwidth}{!}{
+      \begin{tabular}{|l|c|c|c|}
+      \hline
+      \textbf{Releases} & $r$ & $\chi^2$ & $dof$  \\\hline
+      2.1 - 3-0 & 0.565 & 0.633 & 16  \\\hline 
+      2.1 - 3.1 & 0.576 & 0.651  & 17  \\\hline 
+      2.1 - 3.2 & 0.677 & 0.523 & 20 \\ 
+      2.1 - 3.3 & 0.687 & 0.547 & 21 \\\hline
+%       3.2 - 3.2.1 & 0.320 & 0.816 & 13  \\\hline 
+%       3.2 - 3.3.0 & 0.47 & 0.439  & 18 \\\hline 
+%       3.2 - 3.4 & 0.558 & 0.373 & 21 \\ 
+%       3.2 - 4.0 & 0.697 & 0.307 & 23 \\\hline
+%       3.2 - 6.0.1 & 0.683 & 0.310 & 29 \\\hline
+      \end{tabular}
+      }
+      \captionof{table}{NetBeans: fit data for the maximum defect density vs maximum clustering coefficient: correlation coefficient ($r$), 
+      normalized Chi squared ($\chi^2$ ), and number of degrees of freedom ($dof$).}
+\label{tab:max_abn-vs-maxcc-NB}       % Give a unique label
+    \end{minipage}
+  \end{minipage}
