@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.28)  27 OCT 2015 11:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.28)  1 NOV 2015 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -206,7 +206,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
 
-(./introduction_ECRT.tex) (./methodology_ECRT.tex
+(./introduction_ECRT.tex) (./related-work.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -214,9 +214,52 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
 
+LaTeX Warning: Citation `Focardi:2001' on page 2 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Turnu:2011' on page 2 undefined on input line 15.
+
+
+LaTeX Warning: Citation `Barabasi:2000' on page 2 undefined on input line 17.
+
+
+LaTeX Warning: Citation `Song:2005' on page 2 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Turnu:2012' on page 2 undefined on input line 19.
+
+
+LaTeX Warning: Citation `TSE:2011' on page 2 undefined on input line 20.
+
+
+LaTeX Warning: Citation `CSMR:2012' on page 2 undefined on input line 20.
+
+
+LaTeX Warning: Citation `Valverde:2002' on page 2 undefined on input line 22.
+
+
+LaTeX Warning: Citation `Valverde:2003' on page 2 undefined on input line 22.
+
+
+LaTeX Warning: Citation `Challet:2004' on page 2 undefined on input line 24.
+
+
+LaTeX Warning: Citation `Wen:2007' on page 2 undefined on input line 37.
+
+
+LaTeX Warning: Citation `Fortunato:2010' on page 2 undefined on input line 65.
+
+
+LaTeX Warning: Citation `NFast:2004' on page 2 undefined on input line 70.
+
+
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
+)
+(./methodology_ECRT.tex [2]
 Overfull \hbox (29.84523pt too wide) in paragraph at lines 59--71
  [] 
  []
@@ -226,11 +269,8 @@ Underfull \hbox (badness 2326) in paragraph at lines 82--100
 []\OT1/cmr/m/n/10 We de-tected the as-so-ci-ated com-mu-nity struc-
  []
 
-) (./results2_ECRT.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-<figure/EC_BUG_power_law-eps-converted-to.pdf, id=20, 224.84pt x 288.07625pt>
+) (./results2_ECRT.tex [3]
+<figure/EC_BUG_power_law-eps-converted-to.pdf, id=25, 224.84pt x 288.07625pt>
 File: figure/EC_BUG_power_law-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/EC_BUG_power_law-eps-converted-to.pdf>
@@ -238,7 +278,7 @@ Package pdftex.def Info: figure/EC_BUG_power_law-eps-converted-to.pdf used on i
 nput line 49.
 (pdftex.def)             Requested size: 146.34824pt x 187.51547pt.
 
-<figure/EC_CC_power_law-eps-converted-to.pdf, id=21, 224.84pt x 288.07625pt>
+<figure/EC_CC_power_law-eps-converted-to.pdf, id=26, 224.84pt x 288.07625pt>
 File: figure/EC_CC_power_law-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/EC_CC_power_law-eps-converted-to.pdf>
@@ -257,7 +297,7 @@ bug_cc_EC-eps-converted-to.pdf figure/nuovefig/cumulated_bug_cc_EC.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/nuovefig/cumulated_bug_cc_EC-eps-converted-to.pdf, id=22, 967.615pt x 6
+<figure/nuovefig/cumulated_bug_cc_EC-eps-converted-to.pdf, id=27, 967.615pt x 6
 31.35875pt>
 File: figure/nuovefig/cumulated_bug_cc_EC-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -266,11 +306,7 @@ Package pdftex.def Info: figure/nuovefig/cumulated_bug_cc_EC-eps-converted-to.p
 df used on input line 98.
 (pdftex.def)             Requested size: 487.8225pt x 318.29898pt.
 )
-(./conclusions_ECRT.tex)
-Underfull \vbox (badness 6047) has occurred while \output is active []
-
-
-(./SATToSE2015-POST-PROC.bbl
+(./conclusions_ECRT.tex) (./SATToSE2015-POST-PROC.bbl
 Underfull \hbox (badness 1331) in paragraph at lines 18--21
 []\OT1/cmr/m/n/10 S. Chi-damber and C. Ke-merer.  A
  []
@@ -279,7 +315,7 @@ Underfull \hbox (badness 1331) in paragraph at lines 18--21
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
-[3] [4 <./figure/EC_BUG_power_law-eps-converted-to.pdf> <./figure/EC_CC_power_l
+[4] [5 <./figure/EC_BUG_power_law-eps-converted-to.pdf> <./figure/EC_CC_power_l
 aw-eps-converted-to.pdf> <./figure/nuovefig/cumulated_bug_cc_EC-eps-converted-t
 o.pdf>]
 Underfull \hbox (badness 1028) in paragraph at lines 56--59
@@ -306,32 +342,38 @@ Underfull \hbox (badness 2644) in paragraph at lines 86--90
 \OT1/cmr/m/n/10 In \OT1/cmr/m/it/10 Pro-ceed-ings of the 30th In-ter-na-
  []
 
-) [5] (./SATToSE2015-POST-PROC.aux) ) 
+) [6] (./SATToSE2015-POST-PROC.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2938 strings out of 495028
- 46868 string characters out of 6181497
- 117026 words of memory out of 5000000
- 6105 multiletter control sequences out of 15000+600000
+ 2955 strings out of 495028
+ 47099 string characters out of 6181497
+ 114026 words of memory out of 5000000
+ 6119 multiletter control sequences out of 15000+600000
  8463 words of font info for 30 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,9n,38p,433b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmtt8.pfb>
-Output written on SATToSE2015-POST-PROC.pdf (5 pages, 199653 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on SATToSE2015-POST-PROC.pdf (6 pages, 207066 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
