@@ -1,1 +1,106 @@
 \section{Related Work}
+\label{sec:related work}
+
+\textbf{DAL PRIMO WETSOM}
+
+%One of the key concepts of OO paradigm is the class, which provides 
+%the definition of objects, single units where operative code resides, 
+%interacting with other objects in the system by the exchange of messages. 
+%The exchange of messages at run time is determined 
+%at the source code level by the relationships among the 
+%different classes, 
+%such as inheritance, composition, aggregation,
+%association, dependence and so on. 
+Many software systems have reached such a huge dimension that it looks sensible to treat them as 
+complex networks \cite{Focardi:2001}, \cite{Myers:2003}, \cite{Turnu:2011}. 
+In particular, software networks made of thousands of nodes 
+show properties typical of complex networks \cite{Barabasi:2000}, like 
+a power law distribution of the node degree, scale free properties \cite{Song:2005}, fractal and self-similar features
+\cite{Turnu:2012}, the small world property, power law scaling for 
+bug distribution \cite{TSE:2011}, for refactored classes \cite{CSMR:2012}, 
+and so on. 
+In the field of software, class diagrams \cite{Valverde:2002, Valverde:2003}, 
+the software 
+collaboration graph \cite{Myers:2003}, the package dependencies networks \cite{Challet:2004}, 
+have been found to belong to the complex networks category.
+In our case networks nodes are Netbeans classes, and network edges 
+are class dependencies.
+%\input{related_2}
+%Software systems are designed to be highly evolvable \cite{Myers:2003}, in order to be modified to meet new requirements along 
+%the time and this evolvability is acquired by decoupling the different subsystems, to
+%prevent the risk of side-effects when introducing new functionalities.
+%Several authors applied network analysis to the study of software complex systems to gain major knowledge on the 
+%structure and behavior of complex systems and also to gather significative information in order to better address the issue of
+%developers' effort at each stage of software development. 
+%\cite{Wen:2007, Li:2008}.
+%[16, 27, 32, 34]. 
+In \cite{Wen:2007} it has been shown that the knowledge of scale-free properties of software networks
+could be useful to reduce the time devoted to maintenance. 
+\v{S}ubelj and Bajek, after analyzing different Java softwares using a community detection algorithm, find that the software systems analyzed 
+exhibit a significant community structure that doesn't match the packages structure imposed by the designer \cite{Subelj:2011}. 
+\\
+The community structure is 
+one of the properties that recently grabbed researchers' attention. 
+Inside a network a community is a set of vertices between which there is a high density of connections. 
+On the contrary between the communities connections are more sparse. The community structure of a network is its 
+division in subgroups or communities \cite{NG:2004}.
+Elements belonging to the same community are more likely to share the same behavior or properties, or represent a functional unit. 
+This leads to many concrete applications of community detection in different fields (from marketing research to software development). 
+%Modern software systems are structured in subsystems, generally organized in a hierarchical manner, 
+%where small units cooperate with each other to carry out 
+%complex tasks through collaboration and information interchange. 
+%For this reason, the community structure analysis applied to software networks can give some insights on the structure
+%and functionalities of the software.
+%Software engineering practices emphasize the decomposition of complex tasks in smaller ones, to encourage code reuse 
+%and agile development \cite{IJSEKE:2012}. 
+%Specifically, studying the community structure of a complex network can help to understand how a software system is 
+%organized in functional modules. 
+%Many authors analyzed software systems developed in different programming languages and styles and find evidences that 
+%they show scale-free properties (see, for example, \cite{Wen:2007}). 
+%[18, 27, 35]. 
+%Others \cite{Li:2008}, after having analyzed different java softwares using a community detection algorithm, find that the software systems analyzed 
+%exhibit a significant community structure that doesn't match the packages structure imposed by the designer. 
+\\
+Community detection is traditionally addressed using techniques like hierarchical clustering and partitional clustering 
+\cite{Fortunato:2010} and it faces different problems. One of the most important is finding algorithms that allow network
+scalability up to different orders of magnitude 
+(from thousands to millions of vertices) to be analyzed in a reasonable amount of time. 
+\\
+Newman \textit{et al.} proposed several algorithms for community detection
+\cite{NG:2004, NFast:2004, Clauset:2004} using different approaches and dealing with the problem of the computational burden. 
+Moreover, in \cite{NG:2004} Newman and Girvan introduced a quality function called \textit{modularity}, 
+to evaluate how good is a network partition in communities. 
+%si parla della modularità, conviene introdurre qui la definizione
+In our case study, the analysis of the community structure of the software 
+network can help to understand how the software system is organized 
+in functional modules. 
+\\
+In this paper we analyze the community structure 
+of the 56 Netbeans subprojects and the community 
+properties of each subproject in order to recover information about 
+the software structure and quality. We compute four  
+typical metrics for the communities, namely the modularity, 
+the clustering coefficient, the mean degree and the average path length, 
+and compare these metrics to data extracted from the 
+software subprojects, such as the number of defects or the 
+number of packages. 
+To accomplish this comparison we use the research questions approach, 
+formulating three questions: 
+\begin{itemize}
+
+\item \textbf{RQ1}: \textit{Are there correlations between the 
+community structure and software defectiveness?} 
+
+\item  \textbf{RQ2}: \textit{Are there correlations between the community 
+metrics and software defectiveness?}
+
+\item  \textbf{RQ3}: \textit{Do the software networks analyzed present a community structure that matches the package
+structure devised by developers? 
+%If this circumstance occurs, to which extent this matching is present? 
+%Is there a quantitative measure of the matching or mismatching?
+}
+\end{itemize}
+The answers to these research questions will be discussed after the analysis 
+of the results. 
+
+
